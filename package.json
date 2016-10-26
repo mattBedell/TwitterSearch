@@ -1,0 +1,28 @@
+{
+  "name": "twittersearch",
+  "version": "1.0.0",
+  "description": "Search Tweets and get an analysis",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattBedell/TwitterSearch.git"
+  },
+  "author": "Matt Bedell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattBedell/TwitterSearch/issues"
+  },
+  "homepage": "https://github.com/mattBedell/TwitterSearch#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "oauth": "^0.9.14"
+  }
+}
