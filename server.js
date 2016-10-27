@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
 const logger = require('morgan');
-const Oauth = require('OAuth')
+const Oauth = require('OAuth');
+
 require('dotenv').config();
 const tClient = require('twitter');
 app.use(logger('dev'));
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+const PORT = process.env.PORT || 3000;
 
 var twitClient = new tClient({
   consumer_key: `${process.env.API_KEY}`,
@@ -13,13 +18,19 @@ var twitClient = new tClient({
 });
 
 //const OAuth2 = Oauth.OAuth2;
-twitClient.get('search/tweets', {q:'trump'}, (error, tweets, response) => {
-  if(error) throw error;
-  //console.log(response);
-  tweets.statuses.forEach( (obj) => {console.log(obj.user);});
-});
-const PORT = process.env.PORT || 3000;
+// twitClient.get('search/tweets', {q:'trump'}, (error, tweets, response) => {
+//   if(error) throw error;
+//   //console.log(response);
+//   tweets.statuses.forEach( (obj) => {console.log(obj.user);});
+// });
 
+app.get('/', (req, res) => {
+  res.render('test');
+});
+app.post('/myform/:myVal', (req, res) => {
+  console.log(req.params.myVal);
+  res.redirect('/');
+})
 
 
 
