@@ -1,5 +1,5 @@
 const tClient = require('twitter');
-const myTools = require('./../strTest/test');
+const myTools = require('./../lib/buildTweets');
 const toolBox = myTools();
 const twitClient = new tClient({
   consumer_key: `${process.env.API_KEY}`,
@@ -14,9 +14,10 @@ module.exports = function twitterService () {
       res.myTweets = data;
       return next();
     }
-    twitClient.get('search/tweets', {q:req.params.searchTweets, count:1}, (error, tweets, response) => {
+    twitClient.get('search/tweets', {q:req.params.searchTweets}, (error, tweets, response) => {
       if(error) throw error;
-      toolBox.cleanTweet(tweets.statuses);
+      console.log(toolBox.buildTweets(tweets.statuses));
+
        //console.log(tweets.statuses);
       //  console.log(tweets.statuses[0].entities.hashtags);
       //  console.log(tweets.statuses[0].entities.urls);
