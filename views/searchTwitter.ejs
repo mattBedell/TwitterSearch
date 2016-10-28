@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Search Twitter</title>
+    <link rel="stylesheet" href="/css/searchTwitter.css" media="screen" title="no title">
+  </head>
+  <body>
+    <% tweets.forEach( (obj) => { %>
+      <div class="tweetContainer">
+        <div class="tweetText"><%= obj.text %></div>
+      </div>
+  <%  }) %>
+  </body>
+</html>
