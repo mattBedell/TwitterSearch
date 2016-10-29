@@ -6,10 +6,26 @@
     <link rel="stylesheet" href="/css/searchTwitter.css" media="screen" title="no title">
   </head>
   <body>
+    <iframe src="rendAn" name="dummyFrame"></iframe>
     <% tweets.forEach( (obj) => { %>
       <div class="tweetContainer">
-        <div class="tweetText"><%= obj.text %></div>
+          <div class="profileImg" style='background-image: url(<%= obj.user.profileImg %>);'></div>
+          <div class="tweetText"><span class='userName'><%= obj.user.screenName %>: </span><%= obj.text %></div>
+          <form class="analyzeTweet" action="saveToAnalysis" method="post" target="dummyFrame">
+            <!-- <input type="hidden" name="submitedTweet[text]" value="<%= obj.text %>">
+            <input type="hidden" name="submitedTweet[tweetId]" value="<%= obj.tweetId %>">
+            <input type="hidden" name="submitedTweet[urls]" value="<%= obj.urls %>">
+            <input type="hidden" name="submitedTweet[hashtags]" value="<%= obj.hashtags %>">
+            <input type="hidden" name="submitedTweet[mentions]" value="<%= obj.mentions %>">
+            <input type="hidden" name="submitedTweet[screenName]" value="<%= obj.user.screenName %>">
+            <input type="hidden" name="submitedTweet[twitterId]" value="<%= obj.user.twitterId %>">
+            <input type="hidden" name="submitedTweet[location]" value="<%= obj.user.location %>">
+            <input type="hidden" name="submitedTweet[description]" value="<%= obj.user.description %>">
+            <input type="hidden" name="submitedTweet[profileImg]" value="<%= obj.user.profileImg %>"> -->
+            <input type="submit" name="name" value="Analyze!">
+          </form>
       </div>
   <%  }) %>
+  <script type="text/javascript" src="/frameLink.js"></script>
   </body>
 </html>

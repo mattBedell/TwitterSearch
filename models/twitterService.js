@@ -14,16 +14,9 @@ module.exports = function twitterService () {
       res.myTweets = data;
       return next();
     }
-    twitClient.get('search/tweets', {q:req.params.searchTweets}, (error, tweets, response) => {
+    twitClient.get('search/tweets', {q:req.query.findTwitters}, (error, tweets, response) => {
       if(error) throw error;
-      console.log(toolBox.buildTweets(tweets.statuses));
-
-       //console.log(tweets.statuses);
-      //  console.log(tweets.statuses[0].entities.hashtags);
-      //  console.log(tweets.statuses[0].entities.urls);
-      //  console.log(tweets.statuses[0].entities.symbols);
-      //  console.log(tweets.statuses[0].entities.user_mentions);
-      printData(tweets.statuses)
+      printData(toolBox.buildTweets(tweets.statuses));
     })
   }
   return { searchTwitter };

@@ -13,20 +13,21 @@ app.set('views', './views');
 const PORT = process.env.PORT || 3000;
 
 
-const tweetRoute = require('./routes/twitterSearch')
+const tweetRoute = require('./routes/twitterSearch');
+const homeRoute = require('./routes/homeRoute');
+const introRoute = require('./routes/introRoute');
+const analyseRoute = require('./routes/analyseRoute');
+const sendA = require('./routes/sendA')
 
-app.use('/', tweetRoute);
-// app.post('/myform/:myVal', (req, res) => {
-//   console.log(req.params.myVal);
-//   res.redirect('/');
-// })
+app.use('/', homeRoute);
+app.use('/intro', introRoute);
+app.use('/search', tweetRoute);
+app.use('/saveToAnalysis', analyseRoute);
+app.use('/rendAn', sendA);
 
 
 
-
-
-
-
+app.use(express.static(__dirname + '/lib'));
 
 
 

@@ -1,6 +1,10 @@
 const router = require('express').Router();
 
+router.post('/', (req, res) => {
+   res.send('THIS WORKED!');
+})
 router.get('/', (req, res) => {
-   res.render('index');
-});
+   res.send('THIS IS INIT');
+})
+
 module.exports = router;
