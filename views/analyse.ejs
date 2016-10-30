@@ -3,8 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title>Analyse</title>
+    <link rel="stylesheet" href="/css/analyse.css" media="screen" title="no title">
   </head>
   <body>
-    <h1>ANALYSIS PAGE</h1>
+    <div class="aTweet">
+      <div class="profileImg" style='background-image: url(<%= tweet.profileImg %>);'></div>
+      <div class="tweetText"><span class='userName'><%= tweet.screenName %>: </span><%= tweet.text %></div>
+    </div>
+    <div class="emotionContainer">
+      <div class="backBar joyE">
+        <div class="colorFill joyColor">Joy</div>
+      </div>
+      <div class="backBar angerE">
+        <div class="colorFill angerColor">Anger</div>
+      </div>
+      <div class="backBar disqustE">
+        <div class="colorFill disgustColor">Disgust</div>
+      </div>
+      <div class="backBar fearE">
+        <div class="colorFill fearColor">Fear</div>
+      </div>
+      <div class="sentContainer">
+        <div class="sentText"><span class="sentColor"><%= analysis.docSentiment.type %></span></div>
+        <div class="sentimentScore"></div>
+      </div>
+      <iframe class="favWindow" src="favIndex"></iframe>
+    <script>
+    let joyPerc = <%= analysis.docEmotions.joy %>;
+    let angerPerc = <%= analysis.docEmotions.anger %>;
+    let disgustPerc = <%= analysis.docEmotions.disgust %>;
+    let fearPerc = <%= analysis.docEmotions.fear %>;
+    let sentType = "<%= analysis.docSentiment.type %>";
+    let sentScore = <%= analysis.docSentiment.score %>;
+    </script>
+    <script src="/analyseDisplay.js"type="text/javascript">
+
+    </script>
   </body>
 </html>

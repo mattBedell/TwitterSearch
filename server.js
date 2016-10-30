@@ -16,13 +16,13 @@ const tweetRoute = require('./routes/twitterSearch');
 const homeRoute = require('./routes/homeRoute');
 const introRoute = require('./routes/introRoute');
 const analyseRoute = require('./routes/analyseRoute');
-const sendA = require('./routes/sendA')
+const favIndexRoute = require('./routes/favIndex');
 
 app.use('/', homeRoute);
 app.use('/intro', introRoute);
 app.use('/search', tweetRoute);
 app.use('/analyzeTweet', analyseRoute);
-app.use('/rendAn', sendA);
+app.use('/favIndex', favIndexRoute)
 
 
 

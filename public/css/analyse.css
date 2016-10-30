@@ -1,0 +1,35 @@
+.profileImg {
+  height: 35px;
+  width: 35px;
+}
+.userName {
+  color: blue;
+  font-weight: bold;
+}
+.faveWindow {
+  width: 100%;
+  height: 50%;
+}
+.emotionContainer {
+  width: 100%;
+}
+.backBar {
+  width: 25%;
+  height: 10px;
+  background-color: gray;
+}
+.colorFill {
+  height: 100%;
+}
+.joyColor {
+  background-color: blue;
+}
+.angerColor {
+  background-color: red;
+}
+.disgustColor {
+  background-color: brown;
+}
+.fearColor {
+  background-color: yellow;
+}

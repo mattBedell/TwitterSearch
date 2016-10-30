@@ -5,6 +5,9 @@ const urlParser = bodyParser.urlencoded({ extended: true });
 const watsonService = watson();
 
 router.post('/', urlParser, watsonService.searchWatson, (req, res) => {
-   res.render('analyse');
+   res.render('analyse', {
+      analysis: res.analysis,
+      tweet: res.tweet,
+   });
 });
 module.exports = router;
