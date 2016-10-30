@@ -20,7 +20,7 @@ router.get('/show', authenticate, getFavorites, (req,res) => {
 });
 
 router.delete('/favorites/:id', deleteFavorites, (req, res) => {
-  res.redirect('/music');
+  res.redirect('/userTweets/show');
 });
 
 router.post('/save', urlParser, saveFavorite, (req, res) => {

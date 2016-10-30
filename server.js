@@ -22,12 +22,14 @@ const favIndexRoute = require('./routes/favIndex');
 const usersRouter     = require('./routes/users');
 const authRouter      = require('./routes/auth');
 const tweetsRoute = require('./routes/tweets')
+const methodOverride  = require('method-override');
 
 app.use(session({
   resave: false,
   saveUninitialized: false,
   secret: SECRET
 }));
+app.use(methodOverride('_method'));
 
 app.use('/', homeRoute);
 app.use('/intro', introRoute);

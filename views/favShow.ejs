@@ -11,7 +11,7 @@
       <div class="tweetContainer">
           <div class="profileImg" style='background-image: url(<%= obj.tweet.profileImg %>);'></div>
           <div class="tweetText"><span class='userName'><%= obj.tweet.screenName %>: </span><%= obj.tweet.text %></div>
-          <form class="analyzeTweet" target="delete/?<%= obj._id %>?_method=DELETE" action="analyzeTweet" method="post">
+          <form class="analyzeTweet" action="favorites/<%= obj._id %>?_method=DELETE" method="post">
             <input class="formInfo <%= obj.tweet.tweetId %>"type="hidden" name="tweet[text]" value="<%= obj.tweet.text %>">
             <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[tweetId]" value="<%= obj.tweet.tweetId %>">
             <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[urls]" value="<%= obj.tweet.urls %>">
