@@ -7,7 +7,6 @@ module.exports = function watsonService () {
     fetch(API_URL).then((r)=> r.json())
     .then((result) => {
       res.analysis = result;
-      console.log(result);
       res.tweet = req.body.submitedTweet;
       next();
     })

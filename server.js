@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const logger = require('morgan');
 const Oauth = require('OAuth');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 //const OAuth2 = Oauth.OAuth2;
-
+const SECRET = 'tacos3000';
 require('dotenv').config();
 app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
@@ -17,14 +19,24 @@ const homeRoute = require('./routes/homeRoute');
 const introRoute = require('./routes/introRoute');
 const analyseRoute = require('./routes/analyseRoute');
 const favIndexRoute = require('./routes/favIndex');
-const saveRoute = require('./routes/saveRoute');
+const usersRouter     = require('./routes/users');
+const authRouter      = require('./routes/auth');
+const tweetsRoute = require('./routes/tweets')
+
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: SECRET
+}));
 
 app.use('/', homeRoute);
 app.use('/intro', introRoute);
 app.use('/search', tweetRoute);
 app.use('/analyzeTweet', analyseRoute);
 app.use('/favIndex', favIndexRoute)
-app.use('/saveToFavorites', saveRoute)
+app.use('/users', usersRouter);
+app.use('/auth', authRouter);
+app.use('/userTweets', tweetsRoute)
 
 
 
