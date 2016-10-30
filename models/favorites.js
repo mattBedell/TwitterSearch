@@ -10,8 +10,8 @@ function getFavorites(req, res, next) {
       .find({ userId: { $eq: req.session.userId } })
       .toArray((toArrErr, data) => {
         if(toArrErr) return next(toArrErr);
-        res.favorites = data;
-        console.log(data);
+        res.tweets = data;
+        console.log(res.tweets);
         db.close();
         next();
       });

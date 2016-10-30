@@ -10,6 +10,11 @@ body {
   height: 100vh;
   overflow-y: scroll;
 }
+.listContainerFavs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 .tweetContainer {
   display: flex;
   height: 75px;

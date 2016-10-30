@@ -14,7 +14,9 @@ router.get('/', authenticate, getFavorites, (req, res) => {
 });
 
 router.get('/show', authenticate, getFavorites, (req,res) => {
-  res.send("saved")
+  res.render('favShow', {
+    tweets: res.tweets,
+  })
 });
 
 router.delete('/favorites/:id', deleteFavorites, (req, res) => {
