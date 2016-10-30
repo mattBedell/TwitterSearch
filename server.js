@@ -17,12 +17,14 @@ const homeRoute = require('./routes/homeRoute');
 const introRoute = require('./routes/introRoute');
 const analyseRoute = require('./routes/analyseRoute');
 const favIndexRoute = require('./routes/favIndex');
+const saveRoute = require('./routes/saveRoute');
 
 app.use('/', homeRoute);
 app.use('/intro', introRoute);
 app.use('/search', tweetRoute);
 app.use('/analyzeTweet', analyseRoute);
 app.use('/favIndex', favIndexRoute)
+app.use('/saveToFavorites', saveRoute)
 
 
 
