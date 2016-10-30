@@ -22,7 +22,7 @@ const sendA = require('./routes/sendA')
 app.use('/', homeRoute);
 app.use('/intro', introRoute);
 app.use('/search', tweetRoute);
-app.use('/saveToAnalysis', analyseRoute);
+app.use('/analyzeTweet', analyseRoute);
 app.use('/rendAn', sendA);
 
 

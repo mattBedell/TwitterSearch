@@ -1,7 +1,18 @@
+body {
+  display: flex;
+}
+.analysisFrame {
+  width: 50%;
+  height: 100vh;
+}
+.listContainer {
+  width: 50%;
+  height: 100vh;
+  overflow-y: scroll;
+}
 .tweetContainer {
   display: flex;
   height: 75px;
-  width: 100%;
   background-color: rgb(253,252,242);
   margin-bottom: 8px;
   box-shadow: -1px 4px 15px -8px rgba(0,0,0,0.37);

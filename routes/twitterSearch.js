@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const TwittService = require('./../models/twitterService');
+const TwittService = require('./../services/twitterService');
 const twitService = TwittService();
 
 router.get('/', twitService.searchTwitter, (req, res) => {

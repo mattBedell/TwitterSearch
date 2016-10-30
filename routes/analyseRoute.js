@@ -1,9 +1,8 @@
 const router = require('express').Router();
+const watson = require('./../services/watsonService')
+const watsonService = watson();
 
-router.get('/', (req, res) => {
+router.get('/', watsonService.searchWatson, (req, res) => {
    res.render('analyse');
-});
-router.post('/', (req, res) => {
-   res.send('this happened');
 });
 module.exports = router;
