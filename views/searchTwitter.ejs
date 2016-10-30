@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Search Twitter</title>
     <link rel="stylesheet" href="/css/searchTwitter.css" media="screen" title="no title">
-    <script type="text/javascript" src="/frameLink.js"></script>
   </head>
   <body>
     <div class="listContainer">
@@ -12,7 +11,7 @@
         <div class="tweetContainer">
             <div class="profileImg" style='background-image: url(<%= obj.user.profileImg %>);'></div>
             <div class="tweetText"><span class='userName'><%= obj.user.screenName %>: </span><%= obj.text %></div>
-            <form class="analyzeTweet" action="saveToAnalysis" method="get">
+            <form class="analyzeTweet" target="aPane" action="analyzeTweet" method="post">
               <input class="formInfo <%= obj.tweetId %>"type="hidden" name="submitedTweet[text]" value="<%= obj.text %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[tweetId]" value="<%= obj.tweetId %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[urls]" value="<%= obj.urls %>">
@@ -23,7 +22,7 @@
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[location]" value="<%= obj.user.location %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[description]" value="<%= obj.user.description %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[profileImg]" value="<%= obj.user.profileImg %>">
-              <input type="button b<%= obj.tweetId %>" name="myBtn" value="Analyze!">
+              <input type="submit" class="button b<%= obj.tweetId %>" name="myBtn" value="Analyze!">
             </form>
         </div>
     <%  }) %>

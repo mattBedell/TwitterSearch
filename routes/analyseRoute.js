@@ -1,8 +1,10 @@
 const router = require('express').Router();
 const watson = require('./../services/watsonService')
+const bodyParser = require('body-parser');
+const urlParser = bodyParser.urlencoded({ extended: true });
 const watsonService = watson();
 
-router.get('/', watsonService.searchWatson, (req, res) => {
+router.post('/', urlParser, watsonService.searchWatson, (req, res) => {
    res.render('analyse');
 });
 module.exports = router;
