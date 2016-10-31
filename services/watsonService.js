@@ -1,6 +1,6 @@
 'use strict'
 const fetch = require('node-fetch');
-let apiKey = process.env.WATSON_KEY;
+const apiKey = process.env.WATSON_KEY;
 module.exports = function watsonService () {
   const searchWatson = (req, res, next) => {
     let placeHolderSearch = "This is placeholder text to search the watson api"
