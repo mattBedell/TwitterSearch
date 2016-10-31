@@ -12,22 +12,6 @@
           <div class="profileImg" style='background-image: url(<%= obj.tweet.profileImg %>);'></div>
           <div class="tweetText"><span class='userName'><%= obj.tweet.screenName %>: </span><%= obj.tweet.text %></div>
           <form class="analyzeTweet" action="favorites/<%= obj._id %>?_method=DELETE" method="post">
-            <input class="formInfo <%= obj.tweet.tweetId %>"type="hidden" name="tweet[text]" value="<%= obj.tweet.text %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[tweetId]" value="<%= obj.tweet.tweetId %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[urls]" value="<%= obj.tweet.urls %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[hashtags]" value="<%= obj.tweet.hashtags %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[mentions]" value="<%= obj.tweet.mentions %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[screenName]" value="<%= obj.tweet.screenName %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[twitterId]" value="<%= obj.tweet.twitterId %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[location]" value="<%= obj.tweet.location %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[description]" value="<%= obj.tweet.description %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="tweet[profileImg]" value="<%= obj.tweet.profileImg %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="docEmotions[joy]" value="<%= obj.analysis.docEmotions.joy %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="docEmotions[anger]" value="<%= obj.analysis.docEmotions.anger %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="docEmotions[disgust]" value="<%= obj.analysis.docEmotions.disgust %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="docEmotions[fear]" value="<%= obj.analysis.docEmotions.fear %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="docSentiment[type]" value="<%= obj.analysis.docSentiment.type %>">
-            <input class="formInfo <%= obj.tweet.tweetId %>" type="hidden" name="docSentiment[score]" value="<%= obj.analysis.docSentiment.score %>">
             <input type="submit" class="button b<%= obj.tweetId %>" name="myBtn" value="Delete!">
           </form>
       </div>

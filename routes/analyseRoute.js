@@ -8,6 +8,7 @@ router.post('/', urlParser, watsonService.searchWatson, (req, res) => {
    res.render('analyse', {
       analysis: res.analysis,
       tweet: res.tweet,
+      concepts: res.concepts
    });
 });
 module.exports = router;

@@ -1,6 +1,6 @@
 const { MongoClient, ObjectID } = require('mongodb');
 
-const DB_CONNECTION = 'mongodb://localhost:27017/itunescrud';
+const DB_CONNECTION = 'mongodb://localhost:27017/twittersearch';
 
 function getFavorites(req, res, next) {
   // find all favorites for your userId
@@ -28,6 +28,7 @@ function saveFavorite(req, res, next) {
     analysis: {
       docEmotions: req.body.docEmotions,
       docSentiment: req.body.docSentiment,
+      concepts: req.body.concepts,
     }
   };
   //insertObj.favorite.userId = req.session.userId;
