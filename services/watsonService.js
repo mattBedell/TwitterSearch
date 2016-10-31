@@ -10,6 +10,10 @@ module.exports = function watsonService () {
       res.tweet = req.body.submitedTweet;
       next();
     })
+    .catch((err) => {
+      res.error = err;
+      next();
+    });
   }
   return { searchWatson };
 };

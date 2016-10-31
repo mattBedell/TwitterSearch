@@ -70,7 +70,7 @@
           <input class="formInfo <%= tweet.tweetId %>" type="hidden" name="docSentiment[type]" value="<%= analysis.docSentiment.type %>">
           <input class="formInfo <%= tweet.tweetId %>" type="hidden" name="docSentiment[score]" value="<%= analysis.docSentiment.score %>">
           <% analysis.concepts.forEach( (obj) => { %>
-            <input class="formInfo <%= tweet.tweetId %>" type="hidden" name="concepts[all]" value="<%= obj.text %>">
+            <input class="formInfo <%= tweet.tweetId %>" type="hidden" name="concepts[all]" value="<%= analysis.concepts.text %>">
           <% }) %>
           <div class="submitContainer">
             <input class="submitBtn" type="submit" value="Save!">

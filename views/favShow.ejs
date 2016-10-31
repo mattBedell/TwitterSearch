@@ -4,10 +4,53 @@
     <meta charset="utf-8">
     <title>Favorites</title>
     <link rel="stylesheet" href="/css/searchTwitter.css" media="screen" title="no title">
+
+    </script>
   </head>
   <body>
     <div class="listContainerFavs">
     <% tweets.forEach( (obj) => { %>
+      <div class="analysisContainer">
+        <div class="emotionContainer">
+          <div class="indvContainer">
+            <div class="eText">Joy:</div>
+            <div class="backBar joyE">
+              <div class="colorFill joyColor j<%= obj.tweet.tweetId %>"></div>
+              <input class="joyNum joyColorNum<%=obj.tweet.tweetId %>"type="hidden" name="name" value="<%=obj.analysis.docEmotions.joy%>">
+            </div>
+          </div>
+          <div class="indvContainer">
+            <div class="eText">Anger:</div>
+            <div class="backBar angerE">
+              <div class="colorFill angerColor a<%= obj.tweet.tweetId %>"></div>
+              <input class="joyNum angerColorNum<%=obj.tweet.tweetId %>"type="hidden" name="name" value="<%=obj.analysis.docEmotions.anger%>">
+            </div>
+          </div>
+          <div class="indvContainer">
+            <div class="eText">Disgust:</div>
+            <div class="backBar disgustE">
+              <div class="colorFill disgustColor d<%= obj.tweet.tweetId %>"></div>
+              <input class="joyNum disgustColorNum<%=obj.tweet.tweetId %>"type="hidden" name="name" value="<%=obj.analysis.docEmotions.disgust%>">
+            </div>
+          </div>
+          <div class="indvContainer">
+            <div class="eText">Fear:</div>
+            <div class="backBar fearE">
+              <div class="colorFill fearColor f<%= obj.tweet.tweetId %>"></div>
+              <input class="joyNum fearColorNum<%=obj.tweet.tweetId %>"type="hidden" name="name" value="<%=obj.analysis.docEmotions.fear%>">
+            </div>
+          </div>
+        </div>
+        <div class="spacerLine"></div>
+        <div class="sentContainer">
+          <div class="sentText"><span class="sentColor sentColor<%= obj.tweet.tweetId %>"></span></div>
+          <div class="sentimentScore sentimentScore<%= obj.tweet.tweetId %>"></div>
+        </div>
+        <div class="spacerLine"></div>
+        <div class="conceptsContainer">
+          <div class="conceptsTitle">Concepts</div>
+        </div>
+      </div>
       <div class="tweetContainer">
           <div class="profileImg" style='background-image: url(<%= obj.tweet.profileImg %>);'></div>
           <div class="tweetText"><span class='userName'><%= obj.tweet.screenName %>: </span><%= obj.tweet.text %></div>
@@ -17,5 +60,6 @@
       </div>
     <%  }) %>
     </div>
+    <script src="/analyseFav.js"type="text/javascript"></script>
   </body>
 </html>

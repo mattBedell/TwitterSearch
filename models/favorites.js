@@ -11,7 +11,6 @@ function getFavorites(req, res, next) {
       .toArray((toArrErr, data) => {
         if(toArrErr) return next(toArrErr);
         res.tweets = data;
-        console.log(res.tweets);
         db.close();
         next();
       });
