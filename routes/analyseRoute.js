@@ -1,3 +1,4 @@
+'use strict'
 const router = require('express').Router();
 const watson = require('./../services/watsonService')
 const bodyParser = require('body-parser');

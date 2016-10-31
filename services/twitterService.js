@@ -1,3 +1,4 @@
+'use strict'
 const tClient = require('twitter');
 const myTools = require('./../lib/buildTweets');
 const toolBox = myTools();

@@ -1,3 +1,4 @@
+'use strict'
 let joyBar = document.querySelector('.joyColor');
 let angerBar = document.querySelector('.angerColor');
 let disgustBar = document.querySelector('.disgustColor');

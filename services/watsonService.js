@@ -1,3 +1,4 @@
+'use strict'
 const fetch = require('node-fetch');
 let apiKey = process.env.WATSON_KEY;
 module.exports = function watsonService () {

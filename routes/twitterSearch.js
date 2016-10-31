@@ -1,3 +1,4 @@
+'use strict'
 const router = require('express').Router();
 const TwittService = require('./../services/twitterService');
 const twitService = TwittService();

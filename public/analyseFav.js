@@ -1,3 +1,4 @@
+'use strict'
 const connectA = (className) => {
   let percOffset = 20;
   let joyBars = document.getElementsByClassName(`${className}`);
