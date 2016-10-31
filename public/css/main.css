@@ -27,13 +27,15 @@ body {
 .searchBarContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 3px;
 }
 .searchBar {
-  width: 25vw;
-  height: 20px;
+  width: 35vw;
+  height: 25px;
 }
 .submitBtn {
-  height: 24px;
+  height: 28px;
   background-color: rgba(224,223,255, .4);
   border: 1px solid rgba(150, 150, 150, 0.29);
 }

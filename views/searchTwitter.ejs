@@ -8,9 +8,11 @@
   <body>
     <div class="listContainer">
       <% tweets.forEach( (obj) => { %>
-        <div class="tweetContainer">
+        <div class="cardContainer">
+        <div class="tweetContainer2">
             <div class="profileImg" style='background-image: url(<%= obj.user.profileImg %>);'></div>
             <div class="tweetText"><span class='userName'><%= obj.user.screenName %>: </span><%= obj.text %></div>
+          </div>
             <form class="analyzeTweet" target="aPane" action="analyzeTweet" method="post">
               <input class="formInfo <%= obj.tweetId %>"type="hidden" name="submitedTweet[text]" value="<%= obj.text %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[tweetId]" value="<%= obj.tweetId %>">
@@ -22,7 +24,9 @@
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[location]" value="<%= obj.user.location %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[description]" value="<%= obj.user.description %>">
               <input class="formInfo <%= obj.tweetId %>" type="hidden" name="submitedTweet[profileImg]" value="<%= obj.user.profileImg %>">
-              <input type="submit" class="button b<%= obj.tweetId %>" name="myBtn" value="Analyze!">
+              <div class="buttonContainer">
+              <input type="submit" class="deleteBtn b<%= obj.tweetId %>" name="myBtn" value="Analyze!">
+            </div>
             </form>
         </div>
     <%  }) %>

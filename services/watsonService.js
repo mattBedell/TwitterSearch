@@ -9,8 +9,10 @@ module.exports = function watsonService () {
       res.analysis = result;
       res.tweet = req.body.submitedTweet;
       next();
+      console.log(result);
     })
     .catch((err) => {
+      console.log(err);
       res.error = err;
       next();
     });

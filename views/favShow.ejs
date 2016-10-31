@@ -10,7 +10,7 @@
   <body>
     <div class="listContainerFavs">
     <% tweets.forEach( (obj) => { %>
-      <div class="analysisContainer">
+      <div class="analysisContainer analysisContainer<%= obj.tweet.tweetId %>">
         <div class="emotionContainer">
           <div class="indvContainer">
             <div class="eText">Joy:</div>
@@ -51,12 +51,16 @@
           <div class="conceptsTitle">Concepts</div>
         </div>
       </div>
-      <div class="tweetContainer">
-          <div class="profileImg" style='background-image: url(<%= obj.tweet.profileImg %>);'></div>
-          <div class="tweetText"><span class='userName'><%= obj.tweet.screenName %>: </span><%= obj.tweet.text %></div>
-          <form class="analyzeTweet" action="favorites/<%= obj._id %>?_method=DELETE" method="post">
-            <input type="submit" class="button b<%= obj.tweetId %>" name="myBtn" value="Delete!">
-          </form>
+      <div class="cardContainer">
+        <div class="tweetContainer2 tweetContainer<%=obj.tweet.tweetId%>">
+            <div class="profileImg" style='background-image: url(<%= obj.tweet.profileImg %>);'></div>
+            <div class="tweetText"><span class='userName'><%= obj.tweet.screenName %>: </span><%= obj.tweet.text %></div>
+        </div>
+        <form class="analyzeTweet" action="favorites/<%= obj._id %>?_method=DELETE" method="post">
+          <div class="buttonContainer">
+            <input type="submit" class="deleteBtn b<%= obj.tweetId %>" name="myBtn" value="Delete!">
+          </div>
+        </form>
       </div>
     <%  }) %>
     </div>

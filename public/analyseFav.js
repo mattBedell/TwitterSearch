@@ -9,6 +9,25 @@ const connectA = (className) => {
     let myScore = parseFloat(hiddenInput.getAttribute('value'));
     let newWidth = myScore * 100 + percOffset;
     joyBars[i].style.width = `${newWidth}%`;
+    let aContainer = document.querySelector(`.analysisContainer${myClass}`);
+    let tContainer = document.querySelector(`.tweetContainer${myClass}`);
+    tContainer.addEventListener('mouseover', (event) => {
+      tContainer.addEventListener('mousemove', (event) => {
+        mousePos = event.clientY;
+        aContainer.style.top = `${mousePos}px`;
+      })
+      aContainer.style.visibility = "visible";
+      aContainer.style.opacity = "1";
+    })
+    tContainer.addEventListener('mouseout', (event) => {
+      let mousePos = event.clientY;
+      tContainer.removeEventListener('mousemove', (event) => {
+        mousePos = event.clientY;
+        aContainer.style.top = `${mousePos}px`;
+      })
+      aContainer.style.visibility = "hidden";
+      aContainer.style.opacity = "0";
+    })
   }
   // let joyBar = document.querySelector(`.joyColor${idNum}`);
   // let angerBar = document.querySelector(`.angerColor${idNum}`);
