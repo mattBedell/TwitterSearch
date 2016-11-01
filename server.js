@@ -24,7 +24,6 @@ const tweetRoute = require('./routes/twitterSearch');
 const homeRoute = require('./routes/homeRoute');
 const introRoute = require('./routes/introRoute');
 const analyseRoute = require('./routes/analyseRoute');
-const favIndexRoute = require('./routes/favIndex');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const tweetsRoute = require('./routes/tweets')
@@ -44,7 +43,6 @@ app.use('/', homeRoute);
 app.use('/intro', introRoute);
 app.use('/search', tweetRoute);
 app.use('/analyzeTweet', analyseRoute);
-app.use('/favIndex', favIndexRoute)
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/userTweets', tweetsRoute)
