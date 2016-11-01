@@ -48,3 +48,9 @@ The main page makes use of iframes to reduce the number of redirects after user 
 * Search user database according to analysis data
 * Better display of searched tweets, and links to user profiles, hashtags and embedded links
 * Login with twitter credentials
+
+### Sources
+* Thanks to the WDI instructional staff for providing a User Authentication template for creating user accounts, encrypting passwords
+* REGEX references: 
+     * http://stackoverflow.com/questions/23571013/how-to-remove-url-from-a-string-completely-in-javascript
+     * http://stackoverflow.com/questions/9153582/how-to-remove-from-twitter-hashtags
