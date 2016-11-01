@@ -1,6 +1,7 @@
 'use strict'
-const router = require('express').Router();
 
+const router = require('express').Router();
+// Init routes with various methods and page directs
 router.get('/', (req, res) => {
    res.render('index');
 });

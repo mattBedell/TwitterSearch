@@ -1,7 +1,7 @@
 'use strict'
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 /* eslint no-param-reassign: ["error", { "props": false }] */
-
+// Thanks to WDI instructional staff for user auth template
 const express           = require('express');
 const { logIn }  = require('../lib/auth');
 const bodyParser = require('body-parser');

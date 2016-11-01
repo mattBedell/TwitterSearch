@@ -1,6 +1,6 @@
 'use strict'
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
-
+// Thanks to WDI instructional staff for user auth template
 const express      = require('express');
 const { createUser }    = require('../models/user.js');
 const { authenticate }   = require('../lib/auth');
