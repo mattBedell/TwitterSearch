@@ -31,5 +31,8 @@
     "node-fetch": "^1.6.3",
     "oauth": "^0.9.14",
     "twitter": "^1.4.0"
+  },
+  "engines": {
+  "node": "6.6.0"
   }
 }
