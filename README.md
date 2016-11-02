@@ -3,7 +3,7 @@ https://ts-wdi.herokuapp.com/
 
 #### Web Developement Immersive Project 2. 
 
-An application utilizing the Twitter API and IBM Watson's AlchemyLanguage API to analyze the emotional content, concepts, and genral sentiment of user selected tweets.
+An application utilizing the Twitter API and IBM Watson's AlchemyLanguage API to analyze the emotional content, concepts, and general sentiment of user selected tweets.
 
 ###### Technologies used:
 * Javascript
